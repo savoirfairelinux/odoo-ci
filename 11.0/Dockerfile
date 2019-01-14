@@ -13,6 +13,7 @@ RUN set -x; \
     pip3 install coverage==$COVERAGE_VERSION && \
     pip3 install codacy-coverage==$CODACY_COVERAGE_VERSION && \
     apt-get remove -y python3-dev gcc && \
+    apt-get install git -y && \
     apt-get autoremove -y && \
     apt-get clean all && \
     curl -SL https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz | tar xzf - -C /usr/bin
